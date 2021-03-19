@@ -80,8 +80,6 @@ function onOpenModal(evt) {
 function onCloseModal(evt) {
   window.removeEventListener('keydown', onEscKeyPress);
   refs.modal.classList.remove("is-open");
-  refs.modalImg.src = "";
-  refs.modalImg.alt = "";
 }
 
 function onEscKeyPress(evt) {
