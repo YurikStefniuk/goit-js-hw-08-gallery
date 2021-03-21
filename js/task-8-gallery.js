@@ -68,33 +68,33 @@ function onCloseModal() {
 
 function moveImageLeft(ev) {
 
-    if (currentIndex === 0) { currentIndex = boxGallery.length; }
+    if (currentIndex === 0) { currentIndex = DefaultGallery.length; }
 
     currentIndex -= 1;
 
-    const previousPic = boxGallery[currentIndex].original;
+    const previousPic = DefaultGallery[currentIndex].original;
 
-    refs.bigPicture.setAttribute("src", previousPic);
+    refs.modalImage.setAttribute("src", previousPic);
 
-    refs.bigPicture.setAttribute("alt", previousPic);
+    refs.modalImage.setAttribute("alt", previousPic);
 
 }
 
 function moveImageRight(ev) {
 
-      if (currentIndex === boxGallery.length - 1) {
+      if (currentIndex === DefaultGallery.length - 1) {
         currentIndex = -1;
         }
         currentIndex += 1;
-    const nextPic = boxGallery[currentIndex].original;
+    const nextPic = DefaultGallery[currentIndex].original;
 
-    refs.bigPicture.setAttribute("src", nextPic);
-    refs.bigPicture.setAttribute("alt", nextPic);
+    refs.modalImage.setAttribute("src", nextPic);
+    refs.modalImage.setAttribute("alt", nextPic);
 
     }
 
 function onPressHandler(ev) {
-    if (ev.code === "Escape" || ev.currentTarget === refs.backDrop) onCloseModal();
+    if (ev.code === "Escape" || ev.currentTarget === refs.modalOverlay) onCloseModal();
     if (ev.code === 'ArrowLeft') moveImageLeft();
     if (ev.code === 'ArrowRight') moveImageRight();
     }
